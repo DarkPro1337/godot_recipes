@@ -1,6 +1,7 @@
 baseURL = "https://kidscancode.org/godot_recipes/"
 publishDir = "../docs"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Godot Recipes"
 theme = "hugo-theme-learn-cb"
 pygmentsStyle = "dracula"
@@ -26,3 +27,14 @@ disqusShortname = "kidscancode"
 name = "<i class='fas fa-tags'></i>&nbsp;Tags"
 url = "/tags"
 weight = 30
+
+[Languages]
+[Languages.en]
+title = "Godot Recipes"
+weight = 1
+languageName = "English"
+
+[Languages.ru]
+title = "Рецепты Godot"
+weight = 2
+languageName = "Русский"
