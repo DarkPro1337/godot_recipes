@@ -6,5 +6,8 @@
         "platformer",
         "platformers",
         "tileset"
-    ]
+    ],
+    "google-translate.firstLanguage": "ru",
+    "google-translate.serverDomain": "https://translate.google.ru",
+    "google-translate.maxSizeOfResult": 150
 }

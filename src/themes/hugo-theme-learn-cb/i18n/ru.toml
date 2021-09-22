@@ -24,3 +24,6 @@ other = "Больше"
 
 [Expand-title]
 other = "Разверни меня..."
+
+[Content-Comments]
+other = "Комментарии"

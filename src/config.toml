@@ -24,17 +24,21 @@ disqusShortname = "kidscancode"
   minifyOutput = true
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-tags'></i>&nbsp;Tags"
-url = "/tags"
-weight = 30
+    name = "<i class='fas fa-tags'></i>&nbsp;Tags"
+    url = "/tags"
+    weight = 30
 
 [Languages]
-[Languages.en]
-title = "Godot Recipes"
-weight = 1
-languageName = "English"
+    [Languages.en]
+        title = "Godot Recipes"
+        weight = 1
+        languageName = "English"
 
-[Languages.ru]
-title = "Рецепты Godot"
-weight = 2
-languageName = "Русский"
+    [Languages.ru]
+        title = "Рецепты Godot"
+        weight = 2
+        languageName = "Русский"
+    [[Languages.ru.menu.shortcuts]]
+        name = "<i class='fas fa-tags'></i>&nbsp;Теги"
+        url = "/tags"
+        weight = 30
