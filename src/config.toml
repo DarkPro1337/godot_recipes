@@ -10,18 +10,26 @@ googleAnalytics = "UA-39851424-1"
 disqusShortname = "kidscancode"
 
 [params]
-    disableNextPrev = true
-    themeVariant = "green"
-    disableInlineCopyToClipBoard = true
+	disableNextPrev = true
+	themeVariant = "green"
+	disableInlineCopyToClipBoard = true
+	disableAssetsBusting = false
+	disableShortcutsTitle = true
+	disableLandingPageButton = true
+	ordersectionsby = "weight"
 
 [outputs]
-    home = [ "HTML", "RSS", "JSON"]
+	home = [ "HTML", "RSS", "JSON"]
 
 [markup.goldmark.renderer]
-    unsafe = true
+	unsafe = true
 
 [minify]
-  minifyOutput = true
+  minifyOutput = false
+
+[blackfriday]
+	plainIDAnchors = true
+	hrefTargetBlank = true
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-tags'></i>&nbsp;Tags"
