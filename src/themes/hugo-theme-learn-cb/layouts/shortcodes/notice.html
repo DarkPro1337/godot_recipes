@@ -1,2 +1,8 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
+<style>
+    /* Hugo Learn theme notice i18n localization */
+    div.notices.{{ .Get 0 }} p:first-child:after {
+        content: '{{ T (.Get 0) }}'!important;
+    }
+</style>
 <div class="notices {{ .Get 0 }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>{{ .Inner }}</div>

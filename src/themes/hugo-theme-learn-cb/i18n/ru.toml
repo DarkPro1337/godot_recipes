@@ -27,3 +27,15 @@ other = "Разверни меня..."
 
 [Content-Comments]
 other = "Комментарии"
+
+[info]
+other = "Информация"
+
+[warning]
+other = "Внимание"
+
+[note]
+other = "Заметка"
+
+[tip]
+other = "Подсказка"

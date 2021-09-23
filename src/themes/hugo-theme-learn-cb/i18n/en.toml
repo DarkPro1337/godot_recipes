@@ -27,3 +27,15 @@ other = "Expand me..."
 
 [Content-Comments]
 other = "Comments"
+
+[info]
+other = "Info"
+
+[warning]
+other = "Warning"
+
+[note]
+other = "Note"
+
+[tip]
+other = "Tip"
