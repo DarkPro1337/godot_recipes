@@ -1,4 +1,7 @@
 var lunrIndex, pagesIndex;
+//require('./lunr.stemmer.support.js')(lunr);
+//require('./lunr.ru.js')(lunr);
+//require('./lunr.multi.js')(lunr);
 
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
@@ -6,6 +9,7 @@ function endsWith(str, suffix) {
 
 // Initialize lunrjs using our generated index file
 function initLunr() {
+	// add slash to the end of baseurl (defined at search.html)
     if (!endsWith(baseurl,"/")){
         baseurl = baseurl+'/'
     };
@@ -17,6 +21,8 @@ function initLunr() {
             // Set up lunrjs by declaring the fields we use
             // Also provide their boost level for the ranking
             lunrIndex = lunr(function() {
+				//custom: add multilanguage support
+				this.use(lunr.multiLanguage('en', 'ru'));
                 this.ref("uri");
                 this.field('title', {
 		    boost: 15

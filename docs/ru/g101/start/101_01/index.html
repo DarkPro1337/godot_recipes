@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ru" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
+
+    <title>Что такое Godot? :: Рецепты Godot</title>
+
+    
+    <link href="/godot_recipes/css/gd-icon-font.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1632683946" rel="stylesheet">
+    
+      <link href="/godot_recipes/css/theme-green.css?1632683946" rel="stylesheet">
+    
+
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1632683946"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500" rel="stylesheet">
+
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
+  </head>
+  <body class="" data-url="/godot_recipes/ru/g101/start/101_01/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/godot_recipes/ru"><div class="mylogo">Рецепты Godot</div></a>
+      
+
+<img src="/godot_recipes/images/kcc_logo_square.png" />
+
+
+    </div>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
+        
+
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Поиск...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1632683946"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1632683946"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/kidscancode.org\/godot_recipes\/\/ru";
+    
+</script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1632683946"></script>
+
+    
+
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/recent/" title="Свежие рецепты" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/ru/recent/">
+          <i class='fas fa-newspaper fa-fw'></i>&nbspСвежие рецепты
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/g101/" title="Godot 101" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/ru/g101/">
+          <i class='fas fa-graduation-cap fa-fw'></i>&nbspGodot 101
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/g101/start/" title="Начало работы" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/ru/g101/start/">
+          <i class='fas fa-feather-alt fa-fw'></i>&nbspНачало работы
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_01/" title="Что такое Godot?" class="dd-item active">
+        <a href="/godot_recipes/ru/g101/start/101_01/">
+        01. Что такое Godot?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_02/" title="Редактор Godot: Ориентируемся" class="dd-item ">
+        <a href="/godot_recipes/ru/g101/start/101_02/">
+        02. Редактор Godot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_03/" title="Ноды: Строительные блоки Godot" class="dd-item ">
+        <a href="/godot_recipes/ru/g101/start/101_03/">
+        03. Ноды
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://kidscancode.org/ru/godot_recipes/tags"><i class='fas fa-tags'></i>&nbsp;Теги</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://kidscancode.org/godot_recipes/g101/start/101_01/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="https://kidscancode.org/godot_recipes/ru/g101/start/101_01/" selected>Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+<p align="center">
+    <a href="https://github.com/kidscancode/godot_lessons"><i class="fab fa-github-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/c/KidsCanCodeOrg"><i class="fab fa-youtube-square fa-3x"></i></a>
+    <a href="http://twitter.com/KidsCanCode"><i class="fab fa-twitter-square fa-3x"></i></a>
+    <a href="https://discord.gg/bFTqjfdgDz"><i class="fab fa-discord fa-3x"></i></a>
+</p>
+<p align="center"><i class="far fa-copyright"></i> &nbsp;2019-2021 KidsCanCode </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/ru/'>Домашняя</a> > <a href='/godot_recipes/ru/g101/'>Godot 101</a> > <a href='/godot_recipes/ru/g101/start/'>Начало работы</a> > Что такое Godot?
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#игровые-движки">Игровые движки</a></li>
+    <li><a href="#почему-именно-godot">Почему именно Godot?</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Что такое Godot?
+            </h1>
+          
+
+        
+
+
+
+<h2 id="игровые-движки">Игровые движки</h2>
+<p>Разработка игр сложна и требует самых разных знаний и навыков. Чтобы создать современную игру, вам понадобится много базовых технологий, прежде чем вы сможете создать саму игру. Представьте, что вам нужно было собрать свой собственный компьютер и написать собственную операционную систему, прежде чем вы даже смогли начать программировать. Разработка игр была бы похожа на это, если бы вам действительно приходилось начинать с нуля и создавать <em>все</em>, что вам нужно.</p>
+<p>Кроме того, существует ряд общих потребностей для каждой игры. Например, неважно что у вас за игра, ей нужно будет нарисовать что-то на экране. Если код для этого уже написан, то имеет смысл повторно использовать его для каждой другой игры. Здесь на помощь приходят игровые движки.</p>
+<p><em>Игровой движок</em> - это набор инструментов и технологий, предназначенных для помощи в разработке игр. Это позволяет вам больше сосредоточиться на создании игры, а не на заново изобретать колеса. Вот некоторые из функций, которые предоставляет хороший игровой движок:</p>
+<ul>
+<li>Рендеринг (2D/3D)</li>
+</ul>
+<p>&ldquo;Рендеринг&rdquo; - это процесс отображения вашей игры на экране игрока. Хороший конвейер рендеринга должен работать с современными функциями графического процессора, дисплеями с высоким разрешением и такими эффектами, как освещение и перспектива, при сохранении высокой частоты кадров.</p>
+<ul>
+<li>Физика</li>
+</ul>
+<p>Создание точного и удобного физического движка - сложная задача. Для большинства игр требуется хоть какое-то обнаружение столкновений и реагирование на них, а многим нужна имитация физики (т.е. трение, инерция и т.д.), но совсем немногие разработчики готовы взяться за ее написание.</p>
+<ul>
+<li>Поддержка различных платформ</li>
+</ul>
+<p>На нынешнем рынке вы хотите иметь возможность выпускать свою игру на нескольких платформах, таких как мобильная, веб, ПК и/или консоль. Игровой движок позволяет вам создать игру один раз и экспортировать ее на одну или несколько платформ одновременно.</p>
+<ul>
+<li>Среда разработки</li>
+</ul>
+<p>Все эти инструменты собраны в одном приложении, объединяя все в одну среду, поэтому вам не нужно изучать новый рабочий процесс для каждого нового проекта.</p>
+<p>Сегодня существуют десятки популярных игровых движков, таких как Unity, Unreal и GameMaker Studio, и многие другие. Важно помнить, что большинство популярных движков - это коммерческие продукты. Они могут быть или не быть бесплатными, но для этого потребуется какое-то лицензирование или лицензионные отчисления, если вы планируете выпустить свою игру (и особенно если ваша игра приносит деньги). Вам необходимо внимательно прочитать и понять, с чем вы соглашаетесь и что вам разрешено, а что нельзя делать с движком.</p>
+<h2 id="почему-именно-godot">Почему именно Godot?</h2>
+<p><a href="https://godotengine.org/"><img src="/godot_recipes/img/godot3_logo.png?width=250" alt="Логотип Godot"></a></p>
+<center style="color: #8c8c8c">Нажмите на логотип, чтобы скачать Godot.</center>
+<p>In contrast to the above, Godot is completely free and open source, released under the very permissive MIT license. This means there are no fees, hidden costs, or royalties you need to pay. This is in addition to being a fully featured modern game engine.</p>
+<p>В отличие от вышесказанного, Godot полностью бесплатен и имеет открытый исходный код, выпущенный под очень разрешительной лицензией MIT. Это означает, что вам не нужно платить никаких комиссий, скрытых затрат или лицензионных отчислений. Плюсом ко всему - это полноценный современный игровой движок.</p>
+<p>Как для разработчика - преимущества огромны. Поскольку вы не связываетесь с коммерческим лицензированием, вы полностью контролируете, как и где будет распространяться ваша игра. Кроме того, открытый исходный код Godot также означает, что уровень прозрачности намного выше, чем у коммерческих движков. Например, если вы обнаружите, что определенная функция не совсем соответствует вашим потребностям, вы можете модифцицировать сам движок - разрешения для этого не требуется.</p>
+
+
+<h3>Комментарии</h3>
+<div id="gh-comments">
+    <br /><br />
+    
+    <div id="gh-comments-list"></div>
+    <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none">Load more comments</a>
+</div>
+
+<script type="text/javascript" src="/godot_recipes/js/github-comments.js"></script>
+<script type="text/javascript">
+    DoGithubComments( null );
+</script>
+
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/godot_recipes/js/clipboard.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1632683946"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1632683946"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1632683946"></script>
+    <script src="/godot_recipes/js/learn.js?1632683946"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1632683946"></script>
+
+    <link href="/godot_recipes/mermaid/mermaid.css?1632683946" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1632683946"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-39851424-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  </body>
+</html>
+

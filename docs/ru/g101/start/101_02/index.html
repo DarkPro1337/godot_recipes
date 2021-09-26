@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
+
+    <title>Редактор Godot: Ориентируемся :: Рецепты Godot</title>
+
+    
+    <link href="/godot_recipes/css/gd-icon-font.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1632683946" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1632683946" rel="stylesheet">
+    
+      <link href="/godot_recipes/css/theme-green.css?1632683946" rel="stylesheet">
+    
+
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1632683946"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500" rel="stylesheet">
+
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
+  </head>
+  <body class="" data-url="/godot_recipes/ru/g101/start/101_02/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/godot_recipes/ru"><div class="mylogo">Рецепты Godot</div></a>
+      
+
+<img src="/godot_recipes/images/kcc_logo_square.png" />
+
+
+    </div>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
+        
+
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Поиск...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1632683946"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1632683946"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/kidscancode.org\/godot_recipes\/\/ru";
+    
+</script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1632683946"></script>
+
+    
+
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/recent/" title="Свежие рецепты" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/ru/recent/">
+          <i class='fas fa-newspaper fa-fw'></i>&nbspСвежие рецепты
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/g101/" title="Godot 101" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/ru/g101/">
+          <i class='fas fa-graduation-cap fa-fw'></i>&nbspGodot 101
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ru/g101/start/" title="Начало работы" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/ru/g101/start/">
+          <i class='fas fa-feather-alt fa-fw'></i>&nbspНачало работы
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_01/" title="Что такое Godot?" class="dd-item ">
+        <a href="/godot_recipes/ru/g101/start/101_01/">
+        01. Что такое Godot?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_02/" title="Редактор Godot: Ориентируемся" class="dd-item active">
+        <a href="/godot_recipes/ru/g101/start/101_02/">
+        02. Редактор Godot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/ru/g101/start/101_03/" title="Ноды: Строительные блоки Godot" class="dd-item ">
+        <a href="/godot_recipes/ru/g101/start/101_03/">
+        03. Ноды
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://kidscancode.org/ru/godot_recipes/tags"><i class='fas fa-tags'></i>&nbsp;Теги</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://kidscancode.org/godot_recipes/g101/start/101_02/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="https://kidscancode.org/godot_recipes/ru/g101/start/101_02/" selected>Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      
+<p align="center">
+    <a href="https://github.com/kidscancode/godot_lessons"><i class="fab fa-github-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/c/KidsCanCodeOrg"><i class="fab fa-youtube-square fa-3x"></i></a>
+    <a href="http://twitter.com/KidsCanCode"><i class="fab fa-twitter-square fa-3x"></i></a>
+    <a href="https://discord.gg/bFTqjfdgDz"><i class="fab fa-discord fa-3x"></i></a>
+</p>
+<p align="center"><i class="far fa-copyright"></i> &nbsp;2019-2021 KidsCanCode </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/ru/'>Домашняя</a> > <a href='/godot_recipes/ru/g101/'>Godot 101</a> > <a href='/godot_recipes/ru/g101/start/'>Начало работы</a> > Редактор Godot: Ориентируемся
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#менеджер-проектов">Менеджер проектов</a></li>
+    <li><a href="#настройки-проекта">Настройки проекта</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Редактор Godot: Ориентируемся
+            </h1>
+          
+
+        
+
+
+
+<h2 id="менеджер-проектов">Менеджер проектов</h2>
+<p><strong>Менеджер проектов</strong> - это первое, что вы увидите при открытии Godot.</p>
+<p><img src="/godot_recipes/img/g101_01_01.png" alt="Менеджер проектов"></p>
+<p>В этом окне вы можете увидеть список ваших проектов Godot. Вы можете выбрать существующий проект и нажать &ldquo;Run&rdquo;, чтобы начать игру, или &ldquo;Edit&rdquo;, чтобы начать работать над ним в редакторе Godot. Поскольку у вас, вероятно, еще нет проектов, давайте начнем с нажатия кнопки &ldquo;New Project&rdquo;.</p>
+<p><img src="/godot_recipes/img/g101_01_02.png" alt="Создание нового проекта"></p>
+<p>Здесь вы можете дать проекту имя и создать папку для его хранения.</p>
+
+<style>
+     
+    div.notices.note p:first-child:after {
+        content: 'Заметка'!important;
+    }
+</style>
+<div class="notices note" ><p>Каждый проект Godot находится в отдельной папке. Это дает много преимуществ, в том числе упрощает перемещение, совместное использование и резервное копирование проектов. Это также означает, что все файлы проекта (изображения, звуки и т.д.) должны находиться в папке проекта.</p>
+</div>
+<p>Когда вы называете свой проект, попробуйте выбрать имя, которое описывает проект. &ldquo;Новый игровой проект №23&rdquo; не поможет вам вспомнить, что это был за проект. Вы также должны подумать о совместимости: некоторые операционные системы чувствительны к регистру, а некоторые нет. Это может привести к проблемам, если вы переместите или поделитесь своим проектом с одного компьютера на другой. По этой причине многие программисты разрабатывают стандартизированную схему именования. Например: &ldquo;Без пробелов, используем &lsquo;_&rsquo; между словами&rdquo;.</p>
+<p>Назовём этот проект &ldquo;getting_started&rdquo;. Введите это имя и нажмите &ldquo;Create Folder&rdquo;, это создаст папку проекта, а затем нажмите &ldquo;Create &amp; Edit&rdquo;, для перехода к редактированию нового проекта.</p>
+<p>Теперь вы видите окно редактора Godot. Здесь вы будете проводить большую часть своего времени, работая в Godot. Редактор разделен на разделы.</p>
+<p><img src="/godot_recipes/img/g101_01_03.ru.png?width=500" alt="Разделы редактора"></p>
+<ul>
+<li><strong>Область просмотра:</strong> Здесь вы увидите части своей игры по мере того, как будете работать над ними.</li>
+<li><strong>Главное меню:</strong> Здесь вы можете сохранять и загружать файлы, редактировать настройки проекта и пользоваться справкой.</li>
+<li><strong>Рабочие пространства:</strong> Сверху по центру вы можете переключаться между рабочими пространствами 2D, 3D или Script. По умолчанию вы начинаете в 3D.</li>
+<li><strong>Кнопки тестирования:</strong> Эти кнопки позволяют запускать игру в отладочном режиме и управлять ею во время тестирования.</li>
+<li><strong>Доки:</strong> По обеим сторонам есть несколько доков, где вы можете просматривать игровые предметы и настраивать их свойства.</li>
+</ul>
+<h2 id="настройки-проекта">Настройки проекта</h2>
+<p>Мы поговорили об основных частях окна Godot и о том, как они работают, давайте немного поговорим о настройках нашего проекта. Обычно одна из первых задач при запуске нового проекта - убедиться, что все настроено правильно.</p>
+<p>Итак, давайте нажмем на &ldquo;Project&rdquo; в меню и выберем &ldquo;Project Settings&rdquo;.</p>
+<p><img src="/godot_recipes/img/g101_01_project_settings.png" alt="Настройки проекта"></p>
+<p>Это окно настроек проекта. Слева - список категорий. Для большинства проектов подойдут настройки по умолчанию, и вам не стоит беспокоиться об их изменении, если у вас нет особой необходимости. А пока мы просто рассмотрим два раздела. Во-первых, &ldquo;Application/Config&rdquo;.</p>
+<p>Здесь вы можете установить название вашей игры, выбрать, какая сцена является &ldquo;основной&rdquo; (подробнее об этом чуть позже), и изменить значок.</p>
+<p>Во-вторых, давайте посмотрим на раздел &ldquo;Display&rdquo;. Здесь вы настраиваете отображение вашей игры. <em>Width</em> и <em>Height</em> позволяет вам установить размер игрового окна. Например, если вы делаете мобильную игру, вам нужно установить разрешение и пропорции вашего целевого устройства. Также есть настройки масштабирования, растяжения, полноэкранного режима и другие. На данный момент мы оставим размер по умолчанию - позже мы поговорим о том, как настроить его, чтобы наша игра работала на разных устройствах.</p>
+<p><img src="/godot_recipes/img/g101_01_window_settings.png" alt="Вкладка General"></p>
+<p>Вверху также есть несколько вкладок. Мы рассмотрели вкладку &ldquo;General&rdquo;. Я также кратко укажу на &ldquo;Input Map&rdquo;. Здесь вы можете определить различные действия ввода для управления клавиатурой, геймпадом, мышью и т.д. В игре вы будете беспокоиться только о действии, а не о том, какая отдельная клавиша или кнопка была нажата. Это очень мощный и гибкий способ обработки ввода игрока.</p>
+<p>У нас также есть настройки локализации, если вы планируете поддерживать несколько языков для вашей игры. Автозагрузка, о которой мы поговорим позже, и плагины. Сообщество Godot создало множество полезных плагинов, которые вы можете загрузить и добавить, чтобы получить больше функций, различных инструментов и т.д.</p>
+<p>К окну настроек проекта мы вернемся позже. Давайте пока закроем его, и перейдём к следующему шагу: работе с нодами.</p>
+
+
+<h3>Комментарии</h3>
+<div id="gh-comments">
+    <br /><br />
+    
+    <div id="gh-comments-list"></div>
+    <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none">Load more comments</a>
+</div>
+
+<script type="text/javascript" src="/godot_recipes/js/github-comments.js"></script>
+<script type="text/javascript">
+    DoGithubComments( null );
+</script>
+
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/godot_recipes/js/clipboard.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1632683946"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1632683946"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1632683946"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1632683946"></script>
+    <script src="/godot_recipes/js/learn.js?1632683946"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1632683946"></script>
+
+    <link href="/godot_recipes/mermaid/mermaid.css?1632683946" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1632683946"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-39851424-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  </body>
+</html>
+

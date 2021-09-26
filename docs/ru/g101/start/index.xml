@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Начало работы on Рецепты Godot</title>
+    <link>https://kidscancode.org/godot_recipes/ru/g101/start/</link>
+    <description>Recent content in Начало работы on Рецепты Godot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate><atom:link href="https://kidscancode.org/godot_recipes/ru/g101/start/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Что такое Godot?</title>
+      <link>https://kidscancode.org/godot_recipes/ru/g101/start/101_01/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>https://kidscancode.org/godot_recipes/ru/g101/start/101_01/</guid>
+      <description>Игровые движки Разработка игр сложна и требует самых разных знаний и навыков. Чтобы создать современную игру, вам понадобится много базовых технологий, прежде чем вы сможете создать саму игру. Представьте, что вам нужно было собрать свой собственный компьютер и написать собственную операционную систему, прежде чем вы даже смогли начать программировать. Разработка игр была бы похожа на это, если бы вам действительно приходилось начинать с нуля и создавать все, что вам нужно.</description>
+    </item>
+    
+    <item>
+      <title>Редактор Godot: Ориентируемся</title>
+      <link>https://kidscancode.org/godot_recipes/ru/g101/start/101_02/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>https://kidscancode.org/godot_recipes/ru/g101/start/101_02/</guid>
+      <description>Менеджер проектов Менеджер проектов - это первое, что вы увидите при открытии Godot.
+В этом окне вы можете увидеть список ваших проектов Godot. Вы можете выбрать существующий проект и нажать &amp;ldquo;Run&amp;rdquo;, чтобы начать игру, или &amp;ldquo;Edit&amp;rdquo;, чтобы начать работать над ним в редакторе Godot. Поскольку у вас, вероятно, еще нет проектов, давайте начнем с нажатия кнопки &amp;ldquo;New Project&amp;rdquo;.
+Здесь вы можете дать проекту имя и создать папку для его хранения.</description>
+    </item>
+    
+    <item>
+      <title>Ноды: Строительные блоки Godot</title>
+      <link>https://kidscancode.org/godot_recipes/ru/g101/start/101_03/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>https://kidscancode.org/godot_recipes/ru/g101/start/101_03/</guid>
+      <description>Ноды - это основные строительные блоки для создания игр в Godot. Нода - это объект, который может представлять какую-то специализированную игровую функцию. Ноды могут отображать графику, воспроизводить анимацию или представлять трехмерную модель объекта. Нода также содержит набор свойств, позволяющих настроить его поведение. То какие ноды вы добавите в свой проект, будет зависеть от того, какие функции вам нужны. Это модульная система, разработанная для обеспечения гибкости при создании игровых объектов.
+Работа с нодами Ноды это объекты, с точки зрения программирования.</description>
+    </item>
+    
+  </channel>
+</rss>
